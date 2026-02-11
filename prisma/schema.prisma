@@ -1,0 +1,25 @@
+// ... existing code ... <new file>
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Car {
+  id          Int      @id @default(autoincrement())
+  title       String
+  subtitle    String?
+  image       String
+  price       Int?      // price in RUB
+  brand       String?
+  model       String?
+  year        Int?
+  mileage     Int?
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+// ... existing code ... <end of file>
