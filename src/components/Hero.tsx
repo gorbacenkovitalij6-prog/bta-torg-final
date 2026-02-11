@@ -112,21 +112,19 @@ export function Hero() {
 
   return (
     <section ref={ref} className="relative w-full h-screen overflow-hidden bg-black">
-      {/* YouTube Video Background */}
+      {/* Local Video Background */}
       <div className="absolute inset-0">
-        <iframe
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          style={{
-            width: '100vw',
-            height: '100vh',
-            objectFit: 'cover',
-            transform: 'scale(1.5)',
-          }}
-          src="https://www.youtube.com/embed/L9_Qdsd67X0?autoplay=1&mute=1&loop=1&playlist=L9_Qdsd67X0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-          title="Hero Background Video"
-          allow="autoplay; encrypted-media"
-          allowFullScreen={false}
-        />
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Dark Overlay for better text readability */}
